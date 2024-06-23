@@ -10,10 +10,9 @@ using System.Windows.Forms;
 
 namespace Calc
 {
-    // ВСЕМ КУУУУУУУУУУУУ
     public partial class MainForm : Form
     {
-        enum operation {empty, plus, minus, multiply, devide };
+        enum operation {empty, plus, minus, multiply, devide, percent };
         operation oper=operation.empty;
         double number;
 
@@ -31,6 +30,7 @@ namespace Calc
             button_7.Click += NumberButton_Click;
             button_8.Click += NumberButton_Click;
             button_9.Click += NumberButton_Click;
+            button_dot.Click += NumberButton_Click;
           
         }
         private void MainForm_Load(object sender, EventArgs e)
@@ -64,9 +64,13 @@ namespace Calc
                 {
                     number *= double.Parse(label_result.Text);
                 }
-                else
+                else if(oper == operation.devide)
                 {
                     number /= double.Parse(label_result.Text);
+                }
+                else
+                {
+                    number = number / double.Parse(label_result.Text) * 100;
                 }
             }
         }
@@ -100,11 +104,23 @@ namespace Calc
             oper = operation.devide;
         }
 
-        private void button_equ_Click(object sender, EventArgs e)
+        private void button_perc_Click(object sender, EventArgs e)     //Считает, сколько процентов одно число составляет от другого
         {
             Check_Operation(oper, ref number);
-            oper = operation.empty;
+            label_result.Text = String.Empty;
+            oper = operation.percent;
+        }
+
+        private void button_equ_Click(object sender, EventArgs e)
+        {
+            Check_Operation(oper, ref number);           
             label_result.Text=number.ToString();
+            if(oper==operation.percent)
+            {
+                label_result.Text += "%";
+                MessageBox.Show("Result is "+ label_result.Text+"\nPlease, click on CE");
+            }
+            oper = operation.empty;
         }
 
         private void button_CE_Click(object sender, EventArgs e)
@@ -114,6 +130,6 @@ namespace Calc
             oper = operation.empty;
         }
 
-      
+        
     }
 }

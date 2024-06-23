@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label_result = new System.Windows.Forms.Label();
             this.button_0 = new System.Windows.Forms.Button();
             this.button_1 = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@
             this.button_div = new System.Windows.Forms.Button();
             this.button_equ = new System.Windows.Forms.Button();
             this.button_CE = new System.Windows.Forms.Button();
+            this.button_dot = new System.Windows.Forms.Button();
+            this.button_perc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_result
@@ -236,9 +239,9 @@
             this.button_equ.BackColor = System.Drawing.Color.Bisque;
             this.button_equ.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_equ.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_equ.Location = new System.Drawing.Point(118, 467);
+            this.button_equ.Location = new System.Drawing.Point(177, 467);
             this.button_equ.Name = "button_equ";
-            this.button_equ.Size = new System.Drawing.Size(134, 61);
+            this.button_equ.Size = new System.Drawing.Size(110, 61);
             this.button_equ.TabIndex = 15;
             this.button_equ.Text = "=";
             this.button_equ.UseVisualStyleBackColor = false;
@@ -257,12 +260,39 @@
             this.button_CE.UseVisualStyleBackColor = false;
             this.button_CE.Click += new System.EventHandler(this.button_CE_Click);
             // 
+            // button_dot
+            // 
+            this.button_dot.BackColor = System.Drawing.Color.LightSalmon;
+            this.button_dot.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_dot.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_dot.Location = new System.Drawing.Point(103, 467);
+            this.button_dot.Name = "button_dot";
+            this.button_dot.Size = new System.Drawing.Size(68, 61);
+            this.button_dot.TabIndex = 17;
+            this.button_dot.Text = ",";
+            this.button_dot.UseVisualStyleBackColor = false;
+            // 
+            // button_perc
+            // 
+            this.button_perc.BackColor = System.Drawing.Color.Chocolate;
+            this.button_perc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_perc.Font = new System.Drawing.Font("Montserrat", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_perc.Location = new System.Drawing.Point(12, 139);
+            this.button_perc.Name = "button_perc";
+            this.button_perc.Size = new System.Drawing.Size(68, 61);
+            this.button_perc.TabIndex = 18;
+            this.button_perc.Text = "%";
+            this.button_perc.UseVisualStyleBackColor = false;
+            this.button_perc.Click += new System.EventHandler(this.button_perc_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(417, 540);
+            this.Controls.Add(this.button_perc);
+            this.Controls.Add(this.button_dot);
             this.Controls.Add(this.button_CE);
             this.Controls.Add(this.button_equ);
             this.Controls.Add(this.button_div);
@@ -281,9 +311,10 @@
             this.Controls.Add(this.button_0);
             this.Controls.Add(this.label_result);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
@@ -308,6 +339,8 @@
         private System.Windows.Forms.Button button_div;
         private System.Windows.Forms.Button button_equ;
         private System.Windows.Forms.Button button_CE;
+        private System.Windows.Forms.Button button_dot;
+        private System.Windows.Forms.Button button_perc;
     }
 }
 
