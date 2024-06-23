@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Calc
 {
+    // ВСЕМ КУУУУУУУУУУУУ
     public partial class MainForm : Form
     {
         enum operation {empty, plus, minus, multiply, devide };
